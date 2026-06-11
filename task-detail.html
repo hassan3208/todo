@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TaskFlow Task Detail</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<a href="index.html">Home</a>
+<a href="add-task.html">Add Task</a>
+<a href="task-list.html">Task List</a>
+<a href="task-detail.html">Task Detail</a>
+<a href="about.html">About</a>
+</nav>
+<div class="container">
+<h1>Task Detail</h1>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Title</td><td>Fix login bug</td></tr>
+<tr><td>Description</td><td>The login form doesn't validate empty passwords.</td></tr>
+<tr><td>Due Date</td><td>2026-06-15</td></tr>
+<tr><td>Priority</td><td>High</td></tr>
+<tr><td>Status</td><td id="status">Pending</td></tr>
+</table>
+<br>
+<button onclick="markComplete()">Mark as Complete</button>
+<button onclick="deleteTask()" style="background: #A31010; margin-left:10px;">Delete Task</button>
+</div>
+<script>
+function markComplete() {
+  document.getElementById('status').innerText = 'Completed';
+  alert('Task marked as complete!');
+}
+function deleteTask() {
+  if (confirm('Delete this task?')) alert('Task deleted.');
+}
+</script>
+</body>
+</html>
