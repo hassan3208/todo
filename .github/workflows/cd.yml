@@ -2,7 +2,7 @@ name: CD - Deploy to Render
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ dev ]
 
 jobs:
   deploy:
