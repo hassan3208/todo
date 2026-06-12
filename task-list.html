@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskFlow – Task List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="add-task.html">Add Task</a>
+    <a href="task-list.html">Task List</a>
+    <a href="task-detail.html">Task Detail</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="container">
+    <h1>Task List</h1>
+    <div style="margin-bottom:16px;">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('pending')">Pending</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+    </div>
+    <table id="taskTable">
+      <thead>
+        <tr><th>Title</th><th>Due Date</th><th>Priority</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr class="pending"><td>Fix login bug</td><td>2026-06-15</td><td>High</td><td>Pending</td></tr>
+        <tr class="completed"><td>Update README</td><td>2026-06-10</td><td>Low</td><td>Completed</td></tr>
+        <tr class="pending"><td>Write unit tests</td><td>2026-06-20</td><td>Medium</td><td>Pending</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function filterTasks(status) {
+      document.querySelectorAll('#taskTable tbody tr').forEach(row => {
+        row.style.display = (status === 'all' || row.classList.contains(status)) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
